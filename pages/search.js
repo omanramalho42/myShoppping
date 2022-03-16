@@ -239,7 +239,7 @@ export default function SearchScreen() {
             </Grid>
           </Grid>
 
-          <Grid sx={classes.section} container spacing={3}>
+          <Grid sx={classes.section} m="auto" container spacing={3} >
             {loading ? (
               <CircularProgress />
             ) : error ? (
