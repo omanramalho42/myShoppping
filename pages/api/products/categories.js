@@ -3,7 +3,7 @@ import nc from 'next-connect'
 const handler = nc()
 
 handler.get(async (req, res) => {
-  const categories = ['Sneackers', 'Casual']
+  const categories = ['Ring', 'Pulseira', 'Chain', 'Tornozeleira']
   res.send(categories)
 })
 
