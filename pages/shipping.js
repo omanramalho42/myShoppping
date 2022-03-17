@@ -30,7 +30,7 @@ export default function ShippingScreen() {
     if (!userInfo) {
       return router.push('/login?redirect=/shipping')
     }
-    if(location) {
+    if(location != undefined) {
       setValue('address', `${location.name} , ${location.vicinity}`)
     } else {
       setValue('address', shippingAddress.address)
