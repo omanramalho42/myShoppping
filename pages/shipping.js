@@ -30,17 +30,18 @@ export default function ShippingScreen() {
     if (!userInfo) {
       return router.push('/login?redirect=/shipping')
     }
-    if(location != undefined || location != 'undefined') {
-      setValue('address', `${location.name} , ${location.vicinity}`)
-    } else {
-      setValue('address', shippingAddress.address)
-    }
+
+    setValue('address', shippingAddress.address)
     setValue('fullName', shippingAddress.fullName)
     setValue('city', shippingAddress.city)
     setValue('postalCode', shippingAddress.postalCode)
     setValue('country', shippingAddress.country)
+
+    if(location != undefined || location != 'undefined') {
+      setValue('address', `${location.name} , ${location.vicinity}`)
+    }
     
-  }, [router, setValue, shippingAddress, userInfo])
+  }, [router, setValue, shippingAddress, userInfo, location])
 
   const submitHandler = ({ fullName, address, city, postalCode, country }) => {
     dispatch({
