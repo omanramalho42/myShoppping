@@ -9,6 +9,7 @@ import { Store } from '../utils/Store'
 import Cookies from 'js-cookie'
 
 export default function ShippingScreen() {
+
   const {
     handleSubmit,
     control,
@@ -29,12 +30,16 @@ export default function ShippingScreen() {
     if (!userInfo) {
       return router.push('/login?redirect=/shipping')
     }
-
+    if(location) {
+      setValue('address', `${location.name} , ${location.vicinity}`)
+    } else {
+      setValue('address', shippingAddress.address)
+    }
     setValue('fullName', shippingAddress.fullName)
-    setValue('address', shippingAddress.address)
     setValue('city', shippingAddress.city)
     setValue('postalCode', shippingAddress.postalCode)
     setValue('country', shippingAddress.country)
+    
   }, [router, setValue, shippingAddress, userInfo])
 
   const submitHandler = ({ fullName, address, city, postalCode, country }) => {
@@ -230,7 +235,7 @@ export default function ShippingScreen() {
               )}
             ></Controller>
           </ListItem>
-          <ListItem style={{ justifyContent: 'center' }}>
+          <ListItem style={{ justifyContent: 'center', display: 'flex', flexDirection: 'column' }}>
             <Button
                 variant="contained"
                 type="button"
