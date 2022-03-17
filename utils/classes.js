@@ -45,8 +45,8 @@ const classes = {
     hidden: {
       display: 'none',
     },
+
     // search
-  
     searchForm: {
       border: '1px solid #ffffff',
       backgroundColor: '#ffffff',
@@ -65,6 +65,21 @@ const classes = {
       borderRadius: '0 5px 5px 0',
       '& span': {
         color: '#000000',
+      },
+    },
+
+    // MAPA
+    fullContainer: { height: '100vh' },
+    mapInputBox: {
+      position: 'absolute',
+      display: 'flex',
+      left: 0,
+      right: 0,
+      margin: '10px auto',
+      width: 300,
+      height: 40,
+      '& input': {
+        width: 250,
       },
     },
   };
