@@ -37,9 +37,9 @@ export default function ShippingScreen() {
     setValue('postalCode', shippingAddress.postalCode)
     setValue('country', shippingAddress.country)
 
-    if(location != undefined || location != 'undefined') {
-      setValue('address', `${location.name} , ${location.vicinity}`)
-    }
+    // if(location != undefined || location != 'undefined') {
+    //   setValue('address', `${location?.name} , ${location?.vicinity}`)
+    // }
     
   }, [router, setValue, shippingAddress, userInfo, location])
 
