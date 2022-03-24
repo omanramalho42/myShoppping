@@ -74,7 +74,7 @@ export default function ProductScreen(props) {
       },
     })
     enqueueSnackbar(`${product.name} added to the cart`, {
-      variant: 'success',
+      variant: 'successo',
     })
     router.push('/cart')
   }
@@ -89,7 +89,7 @@ export default function ProductScreen(props) {
           <Box sx={classes.section}>
             <NextLink href="/" passHref>
               <Link>
-                <Typography>back to result</Typography>
+                <Typography>Voltar ao resultado</Typography>
               </Link>
             </NextLink>
           </Box>
@@ -110,16 +110,16 @@ export default function ProductScreen(props) {
                     {product.name}
                   </Typography>
                 </ListItem>
-                <ListItem>Category: {product.category}</ListItem>
-                <ListItem>Brand: {product.brand}</ListItem>
+                <ListItem>Categoria: {product.category}</ListItem>
+                <ListItem>Marca: {product.brand}</ListItem>
                 <ListItem>
                   <Rating value={product.rating} readOnly></Rating>
                   <Typography sx={classes.smallText}>
-                    ({product.numReviews} reviews)
+                    ({product.numReviews} visitas)
                   </Typography>
                 </ListItem>
                 <ListItem>
-                  <Typography>Description: {product.description}</Typography>
+                  <Typography>Descrição:: {product.description}</Typography>
                 </ListItem>
               </List>
             </Grid>
@@ -129,10 +129,10 @@ export default function ProductScreen(props) {
                   <ListItem>
                     <Grid container>
                       <Grid item xs={6}>
-                        <Typography>Price</Typography>
+                        <Typography>Preço</Typography>
                       </Grid>
                       <Grid item xs={6}>
-                        <Typography>${product.price}</Typography>
+                        <Typography>R${product.price}</Typography>
                       </Grid>
                     </Grid>
                   </ListItem>
@@ -144,8 +144,8 @@ export default function ProductScreen(props) {
                       <Grid item xs={6}>
                         <Typography>
                           {product.countInStock > 0
-                            ? 'In stock'
-                            : 'Unavailable'}
+                            ? 'Em estoque'
+                            : 'Indisponível'}
                         </Typography>
                       </Grid>
                     </Grid>
@@ -156,7 +156,7 @@ export default function ProductScreen(props) {
                       fullWidth
                       variant="contained"
                     >
-                      Add to cart
+                      Adiconar ao carrinho
                     </Button>
                   </ListItem>
                 </List>

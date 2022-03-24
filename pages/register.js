@@ -57,10 +57,10 @@ export default function RegisterScreen() {
     }
   }
   return (
-    <Layout title="Register">
+    <Layout title="Registrar">
       <Form onSubmit={handleSubmit(submitHandler)}>
         <Typography component="h1" variant="h1">
-          Register
+          Registrar
         </Typography>
         <List>
           <ListItem>
@@ -83,8 +83,8 @@ export default function RegisterScreen() {
                   helperText={
                     errors.name
                       ? errors.name.type === 'minLength'
-                        ? 'Name length is more than 1'
-                        : 'Name is required'
+                        ? 'Nome tem que ser maior que 5 caracteres'
+                        : 'Nome é requerido'
                       : ''
                   }
                   {...field}
@@ -113,8 +113,8 @@ export default function RegisterScreen() {
                   helperText={
                     errors.email
                       ? errors.email.type === 'pattern'
-                        ? 'Email is not valid'
-                        : 'Email is required'
+                        ? 'Email não é válido'
+                        : 'Email é requerido'
                       : ''
                   }
                   {...field}
@@ -142,8 +142,8 @@ export default function RegisterScreen() {
                   helperText={
                     errors.password
                       ? errors.password.type === 'minLength'
-                        ? 'Password length is more than 5'
-                        : 'Password is required'
+                        ? 'senha tem que ser maior que 5 caracteres'
+                        : 'Senha é obrigatória'
                       : ''
                   }
                   {...field}
@@ -171,8 +171,8 @@ export default function RegisterScreen() {
                   helperText={
                     errors.confirmPassword
                       ? errors.confirmPassword.type === 'minLength'
-                        ? 'Confirm Password length is more than 5'
-                        : 'Confirm Password is required'
+                        ? 'Confirmação da senha tem que ser maior que 5 caracteres'
+                        : 'Confirmação da senha é obrigatória'
                       : ''
                   }
                   {...field}
@@ -182,11 +182,11 @@ export default function RegisterScreen() {
           </ListItem>
           <ListItem>
             <Button variant="contained" type="submit" fullWidth color="primary">
-              Register
+              Registrar
             </Button>
           </ListItem>
           <ListItem>
-            Already have an account?{' '}
+            Você já possui uma conta?{' '}
             <NextLink href={`/login?redirect=${redirect || '/'}`} passHref>
               <Link>Login</Link>
             </NextLink>

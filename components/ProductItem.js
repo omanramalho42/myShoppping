@@ -29,13 +29,13 @@ export default function ProductItem({ product, addToCartHandler }) {
         </CardActionArea>
       </NextLink>
       <CardActions>
-        <Typography>${product.price}</Typography>
+        <Typography>R${product.price}</Typography>
         <Button
           size="small"
           color="primary"
           onClick={() => addToCartHandler(product)}
         >
-          Add to cart
+          Adicionar no carrinho
         </Button>
       </CardActions>
     </Card>

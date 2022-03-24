@@ -62,9 +62,9 @@ function OrderHistoryScreen() {
     fetchOrders()
   }, [router, userInfo])
   return (
-    <Layout title="Order History">
+    <Layout title="Historico de pedidos">
       <Typography component="h1" variant="h1">
-        Order History
+        Histórico de pedidos
       </Typography>
       {loading ? (
         <CircularProgress />
@@ -76,10 +76,10 @@ function OrderHistoryScreen() {
             <TableHead>
               <TableRow>
                 <TableCell>ID</TableCell>
-                <TableCell>DATE</TableCell>
+                <TableCell>DATA</TableCell>
                 <TableCell>TOTAL</TableCell>
-                <TableCell>PAID</TableCell>
-                <TableCell>ACTION</TableCell>
+                <TableCell>PAGAMENTO</TableCell>
+                <TableCell>AÇÃO</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -87,13 +87,13 @@ function OrderHistoryScreen() {
                 <TableRow key={order._id}>
                   <TableCell>{order._id}</TableCell>
                   <TableCell>{order.createdAt}</TableCell>
-                  <TableCell>${order.totalPrice}</TableCell>
+                  <TableCell>R${order.totalPrice}</TableCell>
                   <TableCell>
-                    {order.isPaid ? `paid at ${order.paidAt}` : 'not paid'}
+                    {order.isPaid ? `Pago em ${order.paidAt}` : 'pagamento não realizado'}
                   </TableCell>
                   <TableCell>
                     <NextLink href={`/order/${order._id}`} passHref>
-                      <Button variant="contained">Details</Button>
+                      <Button variant="contained">Detalhes</Button>
                     </NextLink>
                   </TableCell>
                 </TableRow>

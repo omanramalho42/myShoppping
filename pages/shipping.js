@@ -84,11 +84,11 @@ export default function ShippingScreen() {
   };
 
   return (
-    <Layout title="Shipping Address">
+    <Layout title="Endereço de envio">
       <CheckoutWizard activeStep={1}></CheckoutWizard>
       <Form onSubmit={handleSubmit(submitHandler)}>
         <Typography component="h1" variant="h1">
-          Shipping Address
+          Endereço de envio
         </Typography>
         <List>
           <ListItem>
@@ -105,14 +105,14 @@ export default function ShippingScreen() {
                   variant="outlined"
                   fullWidth
                   id="fullName"
-                  label="Full Name"
+                  label="Nome completo"
                   inputProps={{ type: 'fullName' }}
                   error={Boolean(errors.fullName)}
                   helperText={
                     errors.fullName
                       ? errors.fullName.type === 'minLength'
-                        ? 'Full Name length is more than 1'
-                        : 'Full Name is required'
+                        ? 'Nome completo tem que ser maior que 1 caractere'
+                        : 'Nome completo é obrigatório'
                       : ''
                   }
                   {...field}
@@ -134,14 +134,14 @@ export default function ShippingScreen() {
                   variant="outlined"
                   fullWidth
                   id="address"
-                  label="Address"
+                  label="Endereço"
                   inputProps={{ type: 'address' }}
                   error={Boolean(errors.address)}
                   helperText={
                     errors.address
                       ? errors.address.type === 'minLength'
-                        ? 'Address length is more than 1'
-                        : 'Address is required'
+                        ? 'Endereço tem que ser maior que 1 caractere'
+                        : 'Endereço é obrigatório'
                       : ''
                   }
                   {...field}
@@ -163,14 +163,14 @@ export default function ShippingScreen() {
                   variant="outlined"
                   fullWidth
                   id="city"
-                  label="City"
+                  label="Cidade"
                   inputProps={{ type: 'city' }}
                   error={Boolean(errors.city)}
                   helperText={
                     errors.city
                       ? errors.city.type === 'minLength'
-                        ? 'City length is more than 1'
-                        : 'City is required'
+                        ? 'Cidade tem que ser maior que 1 caractere'
+                        : 'Cidade é obrigatória'
                       : ''
                   }
                   {...field}
@@ -192,14 +192,14 @@ export default function ShippingScreen() {
                   variant="outlined"
                   fullWidth
                   id="postalCode"
-                  label="Postal Code"
+                  label="Cep"
                   inputProps={{ type: 'postalCode' }}
                   error={Boolean(errors.postalCode)}
                   helperText={
                     errors.postalCode
                       ? errors.postalCode.type === 'minLength'
-                        ? 'Postal Code length is more than 1'
-                        : 'Postal Code is required'
+                        ? 'Cep tem que ser maior que 1 caractere'
+                        : 'Cep é obrigatória'
                       : ''
                   }
                   {...field}
@@ -221,14 +221,14 @@ export default function ShippingScreen() {
                   variant="outlined"
                   fullWidth
                   id="postalCode"
-                  label="Country"
+                  label="País"
                   inputProps={{ type: 'country' }}
                   error={Boolean(errors.country)}
                   helperText={
                     errors.country
                       ? errors.country.type === 'minLength'
-                        ? 'Country length is more than 1'
-                        : 'Country is required'
+                        ? 'País tem que ser maior que 1 caractere'
+                        : 'País é obrigatório'
                       : ''
                   }
                   {...field}
@@ -242,7 +242,7 @@ export default function ShippingScreen() {
                 type="button"
                 onClick={chooseLocationHandler}
             >
-                Choose on map
+                Escolher no mapa
             </Button>
             <Typography>
                 {location?.lat && `${location?.lat}, ${location?.lat}`}
@@ -250,7 +250,7 @@ export default function ShippingScreen() {
           </ListItem>
           <ListItem>
             <Button variant="contained" type="submit" fullWidth color="primary">
-              Continue
+              Continuar
             </Button>
           </ListItem>
         </List>

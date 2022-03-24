@@ -75,8 +75,8 @@ export default function LoginScreen() {
                   helperText={
                     errors.email
                       ? errors.email.type === 'pattern'
-                        ? 'Email is not valid'
-                        : 'Email is required'
+                        ? 'Email não é válido'
+                        : 'Email é obrigatório'
                       : ''
                   }
                   {...field}
@@ -104,8 +104,8 @@ export default function LoginScreen() {
                   helperText={
                     errors.password
                       ? errors.password.type === 'minLength'
-                        ? 'Password length is more than 5'
-                        : 'Password is required'
+                        ? 'Senha tem que ser maior que 5 caracteres'
+                        : 'Senha é obrigatória'
                       : ''
                   }
                   {...field}
@@ -119,9 +119,9 @@ export default function LoginScreen() {
             </Button>
           </ListItem>
           <ListItem>
-            Do not have an account?{' '}
+            Você não tem conta?{' '}
             <NextLink href={`/register?redirect=${redirect || '/'}`} passHref>
-              <Link>Register</Link>
+              <Link>Registrar</Link>
             </NextLink>
           </ListItem>
         </List>

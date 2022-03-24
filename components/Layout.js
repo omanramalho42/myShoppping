@@ -37,6 +37,9 @@ import { useSnackbar } from 'notistack'
 import { getError } from '../utils/error'
 import Image from 'next/image'
 
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
+import PanelBanner from './PanelBanner'
+
 export default function Layout({ title, description, children }) {
   const router = useRouter()
   const { state, dispatch } = useContext(Store)
@@ -177,7 +180,7 @@ export default function Layout({ title, description, children }) {
                     alignItems="center"
                     justifyContent="space-between"
                   >
-                    <Typography>Shopping by category</Typography>
+                    <Typography>Comprar por categoria</Typography>
                     <IconButton
                       aria-label="close"
                       onClick={sidebarCloseHandler}
@@ -210,7 +213,7 @@ export default function Layout({ title, description, children }) {
                   <InputBase
                     name="query"
                     sx={classes.searchInput}
-                    placeholder="Search products"
+                    placeholder="Procurar produtos"
                     onChange={queryChangeHandler}
                   />
                   <IconButton
@@ -237,7 +240,8 @@ export default function Layout({ title, description, children }) {
                         color="secondary"
                         badgeContent={cart.cartItems.length}
                       >
-                        Cart
+                        {/* carrinho */}
+                        <ShoppingCartIcon size={10} />
                       </Badge>
                     ) : (
                       'Cart'
@@ -272,9 +276,9 @@ export default function Layout({ title, description, children }) {
                         loginMenuCloseHandler(e, '/order-history')
                       }
                     >
-                      Order History
+                      Histórico de pedidos
                     </MenuItem>
-                    <MenuItem onClick={logoutClickHandler}>Logout</MenuItem>
+                    <MenuItem onClick={logoutClickHandler}>Sair</MenuItem>
                   </Menu>
                 </>
               ) : (
@@ -286,10 +290,11 @@ export default function Layout({ title, description, children }) {
           </Toolbar>
         </AppBar>
         <Container component="main" sx={classes.main}>
+          <PanelBanner />
           {children}
         </Container>
         <Box component="footer" sx={classes.footer}>
-          <Typography>All rights reserved. Sanity Amazona.</Typography>
+          <Typography>Todos os direitos reservados. Oman Company.</Typography>
         </Box>
       </ThemeProvider>
     </>

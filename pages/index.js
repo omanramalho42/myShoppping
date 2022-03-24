@@ -40,7 +40,7 @@ export default function Home() {
     const quantity = existItem ? existItem.quantity + 1 : 1
     const { data } = await axios.get(`/api/products/${product._id}`)
     if (data.countInStock < quantity) {
-      enqueueSnackbar('Sorry. Product is out of stock', { variant: 'error' })
+      enqueueSnackbar('Desculpe. Produto fora de estoque', { variant: 'error' })
       return
     }
     dispatch({
@@ -55,7 +55,7 @@ export default function Home() {
         quantity,
       },
     })
-    enqueueSnackbar(`${product.name} added to the cart`, {
+    enqueueSnackbar(`${product.name} adicionado ao carrinho`, {
       variant: 'success',
     })
     router.push('/cart')

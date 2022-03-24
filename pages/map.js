@@ -133,9 +133,9 @@ function Map() {
             onPlacesChanged={onPlacesChanged}
           >
             <Box sx={classes.mapInputBox}>
-              <input type="text" placeholder="Enter your address"></input>
+              <input type="text" placeholder="Insira seu endereço"></input>
               <button type="button" className="primary" onClick={onConfirm}>
-                Confirm
+                Confirmar
               </button>
             </Box>
           </StandaloneSearchBox>

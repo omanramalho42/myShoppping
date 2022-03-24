@@ -65,14 +65,14 @@ function CartScreen() {
   return (
     <Layout title="Shopping Cart">
       <Typography component="h1" variant="h1">
-        Shopping Cart
+        Carrinho
       </Typography>
       {cartItems.length === 0 ? (
         <Box>
           <Typography>
             Cart is empty.{' '}
             <NextLink href="/" passHref>
-              <Link>Go shopping</Link>
+              <Link>Volte as compras</Link>
             </NextLink>
           </Typography>
         </Box>
@@ -83,11 +83,11 @@ function CartScreen() {
               <Table>
                 <TableHead>
                   <TableRow>
-                    <TableCell>Image</TableCell>
-                    <TableCell>Name</TableCell>
-                    <TableCell align="right">Qauntity</TableCell>
-                    <TableCell align="right">Price</TableCell>
-                    <TableCell align="right">Action</TableCell>
+                    <TableCell>Imagem</TableCell>
+                    <TableCell>Nome</TableCell>
+                    <TableCell align="right">Quantidade</TableCell>
+                    <TableCell align="right">Preço</TableCell>
+                    <TableCell align="right">Ação</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -127,7 +127,7 @@ function CartScreen() {
                         </Select>
                       </TableCell>
                       <TableCell align="right">
-                        <Typography>${item.price}</Typography>
+                        <Typography>R${item.price}</Typography>
                       </TableCell>
                       <TableCell align="right">
                         <Button
@@ -149,8 +149,8 @@ function CartScreen() {
               <List>
                 <ListItem>
                   <Typography variant="h2">
-                    Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)}{' '}
-                    items) : ${' '}
+                    Total ({cartItems.reduce((a, c) => a + c.quantity, 0)}{' '}
+                    items) : R${' '}
                     {cartItems.reduce((a, c) => a + c.quantity * c.price, 0)}
                   </Typography>
                 </ListItem>
@@ -163,7 +163,7 @@ function CartScreen() {
                     color="primary"
                     variant="contained"
                   >
-                    Checkout
+                    Conferir
                   </Button>
                 </ListItem>
               </List>
