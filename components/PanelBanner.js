@@ -35,9 +35,9 @@ const PanelBanner = () => {
             {banner.map( ({ image }) => image && (
                 <Grid 
                     item
-                    xs={8} 
+                    xs={9} 
                     md={4}
-                    sm={6}
+                    sm={7}
                     textAlign="center"
                 >
                     <Paper style={{ height: 200  }}>
@@ -54,7 +54,7 @@ const PanelBanner = () => {
 
                 <Grid 
                     item
-                    xs={8} 
+                    xs={9} 
                     md={4}
                     sm={4}
                     textAlign="center"
@@ -72,9 +72,9 @@ const PanelBanner = () => {
 
             <Grid 
                 item
-                xs={8} 
+                xs={9} 
                 md={4}
-                sm={5}
+                sm={6}
                 textAlign="center"
             >
                 <Paper style={{ height: 200  }}>
@@ -90,7 +90,7 @@ const PanelBanner = () => {
 
             <Grid 
                 item
-                xs={8} 
+                xs={9} 
                 md={12}
                 sm={5}
                 textAlign="center"
