@@ -1,12 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useState, useEffect } from 'react'
-import { 
-    Box,
+import {
     Grid,
+    Paper,
 } from '@mui/material'
 
 const PanelBanner = () => {
-    const [banner, setBanner] = useState([{image: ''},])
+    const [banner, setBanner] = useState([
+        {
+            image: ''
+        },
+    ])
     
     useEffect(() => {
         setBanner([
@@ -24,42 +28,82 @@ const PanelBanner = () => {
             container
             spacing={3}
             justifyContent="center"
-            padding={5}
+            pb={5}
+            pt={5}
             display="flex"
         >
             {banner.map( ({ image }) => image && (
-                <Grid item xs={14}>
-                    <Box>
-                        <img
+                <Grid 
+                    item
+                    xs={8} 
+                    md={4}
+                    sm={6}
+                    textAlign="center"
+                >
+                    <Paper style={{ height: 200  }}>
+                        {/* <img
                             display="flex"
                             width={1150}
                             src={image} 
                             alt="banner"
-                        />
-                    </Box>
+                        /> */}
+                        BANNER 1
+                    </Paper>
                 </Grid>
             ))}
 
-            <Grid item xs={7}>
-                <Box>
-                    <img
+                <Grid 
+                    item
+                    xs={8} 
+                    md={4}
+                    sm={4}
+                    textAlign="center"
+                >
+                <Paper style={{ height: 200  }}>
+                    {/* <img
                         display="flex"
                         width={500}
                         src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c311eb59940635.5a3516bb49b45.jpg" 
                         alt="banner"
-                    />
-                </Box>
+                    /> */}
+                    BANNER 2
+                </Paper>
             </Grid>
 
-            <Grid item xs={4}>
-                <Box>
-                    <img
+            <Grid 
+                item
+                xs={8} 
+                md={4}
+                sm={5}
+                textAlign="center"
+            >
+                <Paper style={{ height: 200  }}>
+                    {/* <img
                         display="flex"
                         width={400}
                         src="https://i.pinimg.com/564x/a1/83/7b/a1837bd992681c561de4985a48884f7a.jpg"
                         alt="banner"
-                    />
-                </Box>
+                    /> */}
+                    BANNER 3
+                </Paper>
+            </Grid>
+
+            <Grid 
+                item
+                xs={8} 
+                md={12}
+                sm={5}
+                textAlign="center"
+            >
+                <Paper style={{ height: 200 }}>
+                    {/* <img
+                        display="flex"
+                        width={400}
+                        src="https://i.pinimg.com/564x/a1/83/7b/a1837bd992681c561de4985a48884f7a.jpg"
+                        alt="banner"
+                    /> */}
+                    BANNER 4
+                </Paper>
             </Grid>
         
         </Grid>
