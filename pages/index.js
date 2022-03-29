@@ -8,6 +8,7 @@ import ProductItem from '../components/ProductItem'
 import client from '../utils/client'
 import { urlForThumbnail } from '../utils/image'
 import { Store } from '../utils/Store'
+import PanelBanner from '../components/PanelBanner'
 
 export default function Home() {
   const {
@@ -68,6 +69,8 @@ export default function Home() {
       ) : error ? (
         <Alert variant="danger">{error}</Alert>
       ) : (
+        <>
+        <PanelBanner />
         <Grid container spacing={3} justifyContent="center">
           {products.map((product) => (
             <Grid item md={4} key={product.slug}>
@@ -78,6 +81,7 @@ export default function Home() {
             </Grid>
           ))}
         </Grid>
+      </>
       )}
     </Layout>
   )

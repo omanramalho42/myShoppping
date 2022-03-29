@@ -38,7 +38,7 @@ import { getError } from '../utils/error'
 import Image from 'next/image'
 
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
-import PanelBanner from './PanelBanner'
+// import PanelBanner from './PanelBanner'
 
 export default function Layout({ title, description, children }) {
   const router = useRouter()
@@ -155,14 +155,14 @@ export default function Layout({ title, description, children }) {
                 <Link>
                   <Box style={{ display: 'flex', alignItems: 'center', padding: 10 }}>
                     <Image 
-                        alt="scars" 
+                        alt="justay" 
                         src={"/images/scars.png"} 
                         layout="fixed" 
                         width={60} 
                         height={60} 
                       />
                       <Typography sx={classes.brand}>
-                        Scars
+                        Justay
                       </Typography>
                   </Box>
                 </Link>
@@ -290,7 +290,6 @@ export default function Layout({ title, description, children }) {
           </Toolbar>
         </AppBar>
         <Container component="main" sx={classes.main}>
-          <PanelBanner />
           {children}
         </Container>
         <Box component="footer" sx={classes.footer}>

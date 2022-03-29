@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 import React, { useState, useEffect } from 'react'
 import {
@@ -5,7 +6,23 @@ import {
     Paper,
 } from '@mui/material'
 
+import axios from 'axios'
+import { Image } from 'cloudinary-react'
+
 const PanelBanner = () => {
+
+    const [imageSelected, setImageSelected] = useState('');
+
+    const handleUploadImage = () => {
+        const formData = new FormData()
+        formData.append("file", imageSelected)
+        formData.append("upload_preset", "jwmwjxec")
+
+        axios.post(
+            "https://api.cloudinary.com/v1_1/dxx3qxsxt/image/upload", formData
+        ).then(res => console.log(res))
+    }
+
     const [banner, setBanner] = useState([
         {
             image: ''
@@ -41,13 +58,16 @@ const PanelBanner = () => {
                     textAlign="center"
                 >
                     <Paper style={{ height: 200  }}>
-                        {/* <img
-                            display="flex"
-                            width={1150}
-                            src={image} 
-                            alt="banner"
-                        /> */}
-                        BANNER 1
+                        <input 
+                            type="file" 
+                            onChange={(event) => setImageSelected(event.target.files[0])}
+                        />
+                        <button onClick={(e) => handleUploadImage(e.target.files)}>Upload Image</button>
+                        <Image
+                            style={{ width: 200 }}
+                            cloudName="jwmwjxec"
+                            publicId="https://res.cloudinary.com/dxx3qxsxt/image/upload/v1648407369/srilllswwnujy6gmpwkd.png"
+                        />
                     </Paper>
                 </Grid>
             ))}
