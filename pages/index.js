@@ -69,8 +69,6 @@ export default function Home() {
       ) : error ? (
         <Alert variant="danger">{error}</Alert>
       ) : (
-      <>
-        {/* <PanelBanner /> */}
         <Grid container spacing={3} justifyContent="center">
           {products.map((product) => (
             <Grid item md={4} key={product.slug}>
@@ -81,7 +79,6 @@ export default function Home() {
             </Grid>
           ))}
         </Grid>
-      </>
       )}
     </Layout>
   )
