@@ -8,7 +8,7 @@ import ProductItem from '../components/ProductItem'
 import client from '../utils/client'
 import { urlForThumbnail } from '../utils/image'
 import { Store } from '../utils/Store'
-import PanelBanner from '../components/PanelBanner'
+// import PanelBanner from '../components/PanelBanner'
 
 export default function Home() {
   const {
